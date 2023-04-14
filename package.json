@@ -1,0 +1,65 @@
+{
+  "name": "unocss-preset-patch",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Collection of feature presets not integrated into UnoCSS.",
+  "author": "Chris <https://github.com/zyyv>",
+  "license": "MIT",
+  "homepage": "https://github.com/zyyv/unocss-preset-patch#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zyyv/unocss-preset-patch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zyyv/unocss-preset-patch/issues"
+  },
+  "keywords": ["unocss", "unocss-preset"],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "prepublishOnly": "pnpm run build",
+    "release": "bumpp --commit --push --tag && pnpm publish",
+    "start": "esno src/index.ts",
+    "lint": "eslint .",
+    "test": "vitest",
+    "test:update": "vitest -u",
+    "typecheck": "tcs --noEmit"
+  },
+  "dependencies": {
+    "unocss": "^0.51.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.35.2",
+    "@babel/types": "^7.21.0",
+    "@types/node": "^18.14.0",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.34.0",
+    "esno": "^0.16.3",
+    "typescript": "^4.9.5",
+    "unbuild": "^1.1.2",
+    "vite": "^4.1.4",
+    "vitest": "^0.28.5"
+  }
+}

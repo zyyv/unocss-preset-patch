@@ -9,7 +9,7 @@ export function presetPatch() {
        * https://github.com/unocss/unocss/pull/2485
        */
       {
-        name: 'unocss-preset-useful-extractor-includes-base64',
+        name: 'unocss-preset-patch-extractor-includes-base64',
         order: 0,
         extract({ code }) {
           return [...new Set(code.split(/[\\:]?[\s'"`{}]|;(?!base64)+/g))]

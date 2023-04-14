@@ -1,6 +1,6 @@
 import { definePreset } from 'unocss'
 
-export function presetPatch() {
+export function presetPatch(): ReturnType<typeof definePreset> {
   return definePreset({
     name: 'unocss-preset-patch',
     extractors: [
